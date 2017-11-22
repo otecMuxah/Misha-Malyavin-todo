@@ -9,4 +9,4 @@ export const Footer = () => {
         <Navigation nav={ navItems }/>
         <p>footer</p>
     </footer>)
-}
+};
