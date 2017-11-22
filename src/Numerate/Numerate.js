@@ -3,7 +3,7 @@ import React from 'react';
 export const Numerate = (props) => {
     let array = [];
     let counter = props.from;
-    
+
     if (props.from && props.to) {
         while (counter < props.to) {
             array.push(counter++);
