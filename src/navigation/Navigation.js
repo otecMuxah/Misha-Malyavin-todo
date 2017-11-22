@@ -1,13 +1,17 @@
 import React from 'react';
 import './navigation.scss';
 
-export const Navigation = () => {
-    const text = 'Home';
-    const items = ['Home','Gallery','About','Home']
+const text = 'Home';
+const items = ['Home','Gallery','About','Home'];
+
+export const Navigation = ({ isLogin }) => {
+
     return (
         <nav className="main-nav">
             <ul>
-                {items.map((item,index)=><li key={index}><a href={`/${item.toLowerCase()}`}>{item}</a></li>)}
+                <li><a href="/home">Home</a></li>
+                {isLogin &&
+                    <li><a href="/user">User</a></li>}
             </ul>
         </nav>)
 };

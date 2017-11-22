@@ -9,7 +9,7 @@ const plugins = [
     new htmlPlugin({
         template: 'index.html'
     }),
-    new webpack.optimize.CommonsChunkPlugin({ name: 'vendor' }),
+    new webpack.optimize.CommonsChunkPlugin({name: 'vendor'}),
     new webpack.HotModuleReplacementPlugin(),
     new textPlugin({
         filename: 'main.css',
@@ -20,7 +20,7 @@ const plugins = [
 module.exports = {
     entry: {
         main: './app.js',
-        vendor: ['react','react-dom']
+        vendor: ['react', 'react-dom']
     },
     context: path.resolve(__dirname, 'src'),
     output: {
@@ -35,7 +35,10 @@ module.exports = {
                 exclude: path.resolve(__dirname, 'node_modules'),
                 use: {
                     loader: 'babel-loader',
-                    options: { presets: ['env','react'] }
+                    options: {
+                        presets: ['env', 'react'],
+                        plugins: ['transform-class-properties']
+                    }
                 }
             },
 

@@ -4,7 +4,7 @@ import { Navigation } from "../navigation/Navigation";
 
 export const Footer = () => {
     return (<footer className="footer">
-        <Navigation/>
+        <Navigation isLogin />
         <p>footer</p>
     </footer>)
 }
