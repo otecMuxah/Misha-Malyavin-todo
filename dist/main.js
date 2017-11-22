@@ -14,7 +14,7 @@ var _reactDom = __webpack_require__(8);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
-var _navigation = __webpack_require__(28);
+var _navigation = __webpack_require__(27);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -33,6 +33,30 @@ _reactDom2.default.render(Component, document.getElementById('app'));
 
 /***/ }),
 
+/***/ 27:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _Navigation = __webpack_require__(28);
+
+Object.keys(_Navigation).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function get() {
+      return _Navigation[key];
+    }
+  });
+});
+
+/***/ }),
+
 /***/ 28:
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -48,19 +72,23 @@ var _react = __webpack_require__(2);
 
 var _react2 = _interopRequireDefault(_react);
 
+__webpack_require__(29);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Navigation = exports.Navigation = function Navigation() {
+    var text = 'Home';
+
     return _react2.default.createElement(
         'nav',
-        null,
+        { className: 'main-nav' },
         _react2.default.createElement(
             'ul',
             null,
             _react2.default.createElement(
                 'li',
                 null,
-                'Home'
+                text
             ),
             _react2.default.createElement(
                 'li',
@@ -70,6 +98,13 @@ var Navigation = exports.Navigation = function Navigation() {
         )
     );
 };
+
+/***/ }),
+
+/***/ 29:
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
 
 /***/ })
 
