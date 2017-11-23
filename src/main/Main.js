@@ -5,9 +5,11 @@ import { Aside } from "../aside/Aside";
 
 import './main.scss';
 
-export const Main = () => {
-    return (<main className="main">
-        <Content />
-        <Aside />
-    </main>)
+export class Main extends React.Component {
+    render() {
+        return (<main className="main">
+            <Content />
+            <Aside />
+        </main>)
+    }
 };
