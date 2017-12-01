@@ -1,18 +1,11 @@
-import React from 'react';
+import { User } from '../User/User';
 
-import { Greeting } from "../greeting/Greeting";
+export const Content = () =>
+  (
+    <div className="content">
+      <Greeting name="Misha" />
+      <User name="Misha" surname="Petrov" age="28" />
+    </div>
+  );
 
-import './content.scss';
-import { UserList } from "../UserList/UserList";
 
-export const Content = () => {
-
-    const userList = [{name: 'Misha'},{name: 'Sasha',age: 29}];
-
-    return (
-        <div className={"content"}>
-            <Greeting name={'Misha'} />
-            <UserList list={ userList } />
-        </div>
-    )
-};
