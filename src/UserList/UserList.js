@@ -1,18 +1,17 @@
 import React from 'react';
 
-import { User } from "../User/User";
+import { User } from '../User/User';
 
 export const UserList = (props) => {
-    const result = props.list.map((item)=>{
-        return (
-        <li>
-            <User name={item.name} surname={item.surname} age={item.age} />
-        </li>
-    )});
+  const result = props.list.map(item => (
+    <li>
+      <User name={item.name} surname={item.surname} age={item.age} />
+    </li>
+  ));
 
-    return (
-        <ul>
-            { result };
-        </ul>
-    );
+  return (
+    <ul>
+      {result}
+    </ul>
+  );
 };

@@ -1,3 +1,3 @@
 import React from 'react';
 
-export const Error = props => (<mark style={{ color: props.color }}>{props.text}</mark>);
+export const Error = props => <mark style={{ color: props.color }}>{props.text}</mark>;

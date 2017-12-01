@@ -22,5 +22,5 @@ export const Greeting = (props) => {
     result += `, ${props.name}!` || 'Username';
   }
 
-  return (<div className="greeting-block">{result}</div>);
+  return <div className="greeting-block">{result}</div>;
 };

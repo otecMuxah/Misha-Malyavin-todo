@@ -10,18 +10,11 @@ export const Numerate = (props) => {
     }
   }
   if (props.odd) {
-    array = array.filter((item) => {
-      if (item % 2 !== 0) {
-        return item;
-      }
-    });
+    array = array.filter(item => item % 2 !== 0);
   }
+
   if (props.even) {
-    array = array.filter((item) => {
-      if (item % 2 === 0) {
-        return item;
-      }
-    });
+    array = array.filter(item => item % 2 === 0);
   }
 
   return (
