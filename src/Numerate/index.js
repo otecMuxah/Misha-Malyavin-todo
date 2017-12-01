@@ -1,1 +1,1 @@
-export * from './Numerate'
+export * from './Numerate';
