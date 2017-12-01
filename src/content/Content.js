@@ -3,13 +3,16 @@ import React from 'react';
 import { Greeting } from "../greeting/Greeting";
 
 import './content.scss';
-import {User} from "../User/User";
+import { UserList } from "../UserList/UserList";
 
 export const Content = () => {
+
+    const userList = [{name: 'Misha'},{name: 'Sasha',age: 29}];
+
     return (
         <div className={"content"}>
-            <Greeting name={'Misha'}/>
-            <User name={'Misha'} surname={'Petrov'} age='28'/>
+            <Greeting name={'Misha'} />
+            <UserList list={ userList } />
         </div>
     )
 };
