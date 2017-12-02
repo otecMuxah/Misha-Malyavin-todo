@@ -6,59 +6,70 @@ const args = require('yargs').argv;
 
 
 const plugins = [
-    new htmlPlugin({
-        template: 'index.html'
-    }),
-    new webpack.optimize.CommonsChunkPlugin({ name: 'vendor' }),
-    new webpack.HotModuleReplacementPlugin(),
-    new textPlugin({
-        filename: 'main.css',
-        allChunks: true
-    })
+  new htmlPlugin({
+    template: 'index.html'
+  }),
+  new webpack.optimize.CommonsChunkPlugin({ name: 'vendor' }),
+  new webpack.HotModuleReplacementPlugin(),
+  new textPlugin({
+    filename: 'main.css',
+    allChunks: true
+  }),
+  new webpack.ProvidePlugin({
+    React: 'react'
+  })
 ];
 
 module.exports = {
-    entry: {
-        main: './app.js',
-        vendor: ['react','react-dom']
-    },
-    context: path.resolve(__dirname, 'src'),
-    output: {
-        filename: '[name].js',
-        path: path.resolve(__dirname, 'dist'),
-    },
+  entry: {
+    main: './app.js',
+    vendor: ['react', 'react-dom']
+  },
+  context: path.resolve(__dirname, 'src'),
+  output: {
+    filename: '[name].js',
+    path: path.resolve(__dirname, 'dist'),
+  },
 
-    module: {
-        rules: [
-            {
-                test: /\.js$/,
-                exclude: path.resolve(__dirname, 'node_modules'),
-                use: {
-                    loader: 'babel-loader',
-                    options: { presets: ['env','react'] }
-                }
-            },
+  module: {
+    rules: [
+      {
+        enforce: 'pre',
+        test: /src.*\.js$/,
+        exclude: /node_modules/,
+        loader: 'eslint-loader',
+      },
+      {
+        test: /\.js$/,
+        exclude: path.resolve(__dirname, 'node_modules'),
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['env', 'react'],
+            plugins: ['transform-class-properties']
+          }
+        }
+      },
+      {
+        test: /\.s?css$/,
+        use: textPlugin.extract({
+          fallback: 'style-loader',
+          use: ['css-loader', 'sass-loader']
+        })
 
-            {
-                test: /\.s?css$/,
-                use: textPlugin.extract({
-                    fallback: "style-loader",
-                    use: ["css-loader", "sass-loader"]
-                })
+      }
+    ],
+  },
 
-            }
-        ],
-    },
+  plugins,
 
-    plugins,
+  devtool: 'source-map',
 
-    devtool: 'source-map',
-
-    devServer: {
-        contentBase: path.resolve(__dirname, 'dist'),
-        publicPath: '/',
-        port: 9000
-    }
+  devServer: {
+    contentBase: path.resolve(__dirname, 'dist'),
+    publicPath: '/',
+    port: 9000
+  }
 };
 
 

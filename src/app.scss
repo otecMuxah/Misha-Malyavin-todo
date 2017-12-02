@@ -3,3 +3,10 @@
 body {
   background: $main-bg;
 }
+
+.main-wrapper {
+  display: grid;
+  grid-template-rows: 100px auto 100px;
+  min-height: 100vh;
+  grid-gap: 20px;
+}
