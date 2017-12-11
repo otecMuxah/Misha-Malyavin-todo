@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { User } from '../User/User';
-import './userlist.scss';
+import './UserList.scss';
 
 export const UserList = (props) => {
   let posts = '';

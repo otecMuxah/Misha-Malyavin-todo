@@ -1,6 +1,6 @@
 import './footer.scss';
-import { Navigation } from '../navigation/Navigation';
-import { GetGeolocation } from '../GetGeolocation/GetGeolocation';
+import { Navigation } from '../Navigation';
+import { GetGeolocation } from '../GetGeolocation';
 
 const navItems = ['Home', 'Gallery', 'About', 'Home'];
 

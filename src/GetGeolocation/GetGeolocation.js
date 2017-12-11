@@ -16,10 +16,7 @@ export class GetGeolocation extends React.Component {
     this.setState({ position: `Latitude:  ${position.coords.latitude}  Longitude: ${position.coords.longitude}` });
   }
 
-  clickHandler = () => {
-    this.getLocation();
-  }
   render() {
-    return <span onClick={this.clickHandler}>{this.state.position}</span>;
+    return <span onClick={this.getLocation}>{this.state.position}</span>;
   }
 }

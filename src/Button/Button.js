@@ -8,9 +8,7 @@ export class Button extends React.Component {
     };
   }
   clickHandle = () => {
-    if (this.state.activeClass) {
-      this.setState({ activeClass: '' });
-    } else { this.setState({ activeClass: 'active' }); }
+    this.setState({ activeClass: this.state.activeClass ? '' : 'active' });
     return null;
   }
   render() {

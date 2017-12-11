@@ -35,7 +35,11 @@ export class Main extends React.Component {
       <main className="main">
         <Content />
         <Aside />
-        <UserList list={this.state.users} onClick={this.onUserClick} posts={this.state.posts} />
+        <UserList
+          list={this.state.users}
+          onClick={this.onUserClick}
+          posts={this.state.posts}
+        />
       </main>
     );
   }
